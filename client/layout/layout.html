@@ -1,6 +1,16 @@
 <template name="layout">
-  <div class="container">
-    <h1>My App</h1>
-    {{> yield}}
-  </div>
+	<div class="container">
+		<ul class="nav nav-pills">
+  			<li role="presentation">
+  				<a href="{{pathFor 'home'}}">Home</a>
+  			</li>
+  			<li role="presentation">
+  				<a href="{{pathFor 'about'}}">About</a>
+  			</li>
+ 			 <li role="presentation">
+ 			 	<a href="{{pathFor 'comments'}}">Comments</a>
+ 			 </li>
+		</ul>
+	{{> yield}}
+	</div>
 </template>
