@@ -3,11 +3,23 @@
   <h2>Please tell me your issues with key words</h2>
 
 
-  <input type="text" placeholder="Enter some symptoms">
+  <input type="text" class="js-user-symptoms" placeholder="Enter some symptoms">
   <br>
-  <textarea> You can also enter some issues you want to ask</textarea>
-  <button class="btn btn-info"> Submit</button>
+  <button class="js-pusher btn btn-info"> Submit</button>
   <br>
+  <hr>
+	<ul>
+	{{#each s in symptomsdata}}
+	   {{> symptomsRow  symptom=s}}
+	{{/each}}
 
+    </ul>
   <br>
+</template>
+
+<template name="symptomsRow">
+	 <li>{{symptom.createdAt}}: {{ symptom.text}} : {{symptom.userEmail}}
+       <span class="js-delete-symptoms glyphicon glyphicon-remove" aria-hidden="true">
+       </span>
+	  </li>
 </template>

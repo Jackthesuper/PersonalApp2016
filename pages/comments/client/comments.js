@@ -7,7 +7,6 @@ Template.comments.helpers({
 
 Template.comments.events({
 	"click .js-submit-comment": function(event){
-	   event.preventDefault();
 	   //console.dir(event);
 	   const comment_text = $(".js-user-comment").val();
 	   if (comment_text=="") {
@@ -24,7 +23,7 @@ Template.comments.events({
 	    //console.dir(comment_obj);
 	    Comments.insert(comment_obj);
 	    $(".js-user-comment").val("");
-	    Router.go('/commentSubmit');
+	    //Router.go('/commentSubmit');
 	    console.log("Did we get here????")
 	},
 });

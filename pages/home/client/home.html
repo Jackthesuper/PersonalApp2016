@@ -1,9 +1,19 @@
 <template name="home">
-  <h1>Ni Hao</h1>
-  Welcome to my Personal App!
+<div class="{{theColor}}">
+  <h1>Virtual Doctor App</h1>
+  <h2>Welcome... Please register and log in!</h2><br>
   {{#if currentUser}}
-    Congratulations for getting logged in!
+     <h2>Congratulations for getting logged in!</h2>
   {{else}}
-    You better logged in!
+     <h2>You better log in!!!</h2>
   {{/if}}
+  <br>
+  <select class="js-color">
+    <option>bg-info</option>
+    <option>bg-warning</option>
+  </select>
+
+  Counter: {{theCounter}}<br>
+  <button class="js-pusher">Push me</button>
+</div>
 </template>
