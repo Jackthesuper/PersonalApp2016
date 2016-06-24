@@ -20,7 +20,8 @@ Template.symptoms.events({
 	    createdBy: Meteor.userId(),
 	    userEmail: Meteor.user().emails[0].address};
 	    //console.dir(comment_obj);
-	    Symptoms.insert(symptoms_obj);
+			Meteor.call("insertSymptoms",symptoms_obj);
+	    //Symptoms.insert(symptoms_obj);
 	    $(".js-user-symptoms").val("");
 	    //Router.go('/about');
 	    console.log("Did we get here????")
@@ -31,6 +32,7 @@ Template.symptomsRow.events({
 "click .js-delete-symptoms": function(event){
 	console.log("clicked on the x");
 		console.dir(this);
-		Symptoms.remove(this.symptom._id);
+		//Symptoms.remove(this.symptom._id);
+		Meteor.call("removeSymptoms",this.symptom._id);
 	},
 })
