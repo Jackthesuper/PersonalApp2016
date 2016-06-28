@@ -1,5 +1,5 @@
 Template.about.events({
-  "click .js-like" :function(event){
+  "click .js-gohome" :function(event){
     event.preventDefault();
     Router.go('/');
   }

@@ -1,7 +1,7 @@
 <template name="home">
 <div class="{{theColor}}">
   <h1>Virtual Doctor App</h1>
-  <h2>Welcome... Please register and log in!</h2><br>
+  <h2>Welcome... <div class="alert alert-warning" role="alert">Please register and log in!</div> </h2>
   {{#if currentUser}}
      <h2>Congratulations for getting logged in!</h2>
   {{else}}
@@ -11,9 +11,24 @@
   <select class="js-color">
     <option>bg-info</option>
     <option>bg-warning</option>
-  </select>
-
-  Counter: {{theCounter}}<br>
+  </select> change color
+<br>
+  Counter: {{theCounter}}
   <button class="js-pusher">Push me</button>
+</div>
+
+<hr>
+  <img class="img-rounded" src="images/1585.jpg" width="300">
+  <br><br>
+  <div class="progress">
+  <div class="progress-bar progress-bar-success" style="width: 25%">
+    <span class="sr-only">35% Complete (success)</span>
+  </div>
+  <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 15%">
+    <span class="sr-only">20% Complete (warning)</span>
+  </div>
+  <div class="progress-bar progress-bar-danger" style="width: 20%">
+    <span class="sr-only">10% Complete (danger)</span>
+  </div>
 </div>
 </template>

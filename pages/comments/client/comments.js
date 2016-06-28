@@ -8,6 +8,7 @@ Template.comments.helpers({
 Template.comments.events({
 	"click .js-submit-comment": function(event){
 	   //console.dir(event);
+		 event.preventDefault();
 	   const comment_text = $(".js-user-comment").val();
 	   if (comment_text=="") {
 	   	window.alert("you must enter a comment!");

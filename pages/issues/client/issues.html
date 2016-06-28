@@ -1,0 +1,27 @@
+<template name="issues">
+	<h1>Issues Info Form</h1>
+    <img class="img-rounded" src="images/Virtual-Doctor.jpg">
+	<br>
+	Name: <input type="text" class="js-name"><br>
+	Birthday: <input type="text" class="js-birthday" placeholder="dd/mm/yy"><br>
+	Phone: <input type="text" class="js-phone" placeholder="xxx-xxx-xxxx"><br>
+	Address: <input type="text" class="js-address"><br>
+	Issues:
+	<input type="checkbox" class="js-cold">Cold,
+	<input type="checkbox" class="js-hda">Headache
+	<input type="checkbox" class="js-hta">Heartache,
+	<input type="checkbox" class="js-sta">Stomachache,
+	<input type="checkbox" class="js-diz">Dizzying
+	<button class="js-addIssues">Add Issues</button>
+	<ul>
+		{{#each i in issues}}
+		<li>{{i.offeredBy}} is offering
+			  <a href="/showIssues/{{i._id}}">a issue</a>
+				live in {{i.liveIn}}</li>
+		{{/each}}
+	</ul>
+</template>
+
+<template name="showIssue">
+	{{offeredBy}}  offering a issue, who live in {{liveIn}}
+</template>
