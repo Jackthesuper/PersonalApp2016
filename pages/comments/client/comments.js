@@ -22,7 +22,8 @@ Template.comments.events({
 	    createdBy: Meteor.userId(),
 	    userEmail: Meteor.user().emails[0].address};
 	    //console.dir(comment_obj);
-	    Comments.insert(comment_obj);
+	    //Comments.insert(comment_obj);
+			Meteor.call("insertComments",comment_obj);
 	    $(".js-user-comment").val("");
 	    //Router.go('/commentSubmit');
 	    console.log("Did we get here????")
@@ -33,6 +34,7 @@ Template.commentRow.events({
 	"click .js-delete-comment": function(event){
 		console.log("clicked on the x");
 		console.dir(this);
-		Comments.remove(this.comment._id);
+		//Comments.remove(this.comment._id);
+		Meteor.call("removeComments",this.comment._id);
 	},
 })

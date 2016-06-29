@@ -16,9 +16,7 @@
 	<button class="js-delete">Delete All</button>
 	<ul>
 		{{#each i in issues}}
-		<li>{{i.offeredBy}} is offering
-			  <a href="/showIssues/{{i._id}}">a issue</a>
-				live in {{i.liveIn}}</li>
+		<li>{{i.offeredBy}} who live in {{i.liveIn}}, is offering <a href="/showIssues/{{i._id}}">a issue</a></li>
 		{{/each}}
 	</ul>
 </template>
