@@ -24,5 +24,10 @@ Template.issues.events({
 		//Issues.insert(issue);
 		Meteor.call("insertIssue",issue);
 
-	}
+	},
+
+	"click .js-delete": function(event){
+		console.log("you clicked delete all");
+		Meteor.call("removeIssuesAll");
+	},
 })

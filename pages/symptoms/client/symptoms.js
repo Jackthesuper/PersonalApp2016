@@ -11,7 +11,7 @@ Template.symptoms.events({
 	   //console.dir(event);
 	   const symptoms_db = $(".js-user-symptoms").val();
 	   if (symptoms_db=="") {
-	   	window.alert("you must enter a comment!");
+	   	window.alert("you must enter a symptom!");
 	   	return;
 	   }
 	   const symptoms_obj =
