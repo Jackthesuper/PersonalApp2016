@@ -1,0 +1,29 @@
+<template name="setting">
+  <div class ="jumbotron">
+    <h1>Please enter some of your personal info!!</h1>
+  </div>
+  <hr>
+  <ul>
+    <li>Name: <input type="text" class="js-name"></li>
+    <li>Gender: <input type="text" class="js-gender"></li>
+    <li>Height: <input type="text" class="js-height" placeholder="eg. 180cm"></li>
+    <li>Weight: <input type="text" class ="js-weight" placeholder="eg. 60kg"></li>
+  </ul>
+
+  <button class="js-submit btn btn-info">
+		Submit
+	</button>
+
+  <hr>
+  <ul>
+	{{#each s in getSettings}}
+	   {{> settingRow  settingOne=s}}
+	{{/each}}
+
+    </ul>
+</template>
+
+<template name="settingRow">
+	 <li> [{{settingOne.offeredBy}}] {{settingOne.genderIs}}: {{ settingOne.heightIs}} : {{settingOne.weightIs}}
+	  </li>
+</template>

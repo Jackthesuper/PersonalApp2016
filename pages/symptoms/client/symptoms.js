@@ -23,7 +23,7 @@ Template.symptoms.events({
 			Meteor.call("insertSymptoms",symptoms_obj);
 	    //Symptoms.insert(symptoms_obj);
 	    $(".js-user-symptoms").val("");
-	    //Router.go('/about');
+	    Router.go('/symptomsSubmit');
 	    console.log("Did we get here????")
 	},
 });
