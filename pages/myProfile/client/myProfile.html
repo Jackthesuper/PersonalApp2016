@@ -1,0 +1,35 @@
+<template name= "myProfile">
+  {{#if currentUser}}
+
+  <h1>Update your profile here</h1>
+  <form>
+
+	 	<fieldset class="form-group">
+	   		<label for="userid">Last Name</label>
+	    	     <input type="user_id" class="form-control js-lastname">
+	  	</fieldset>
+
+      <fieldset class="form-group">
+  	   		<label for="userid">First Name</label>
+  	    	     <input type="user_id" class="form-control js-firstname">
+  	  	</fieldset>
+
+        <fieldset class="form-group">
+    	   		<label for="userid">Nickname</label>
+    	    	     <input type="user_id" class="form-control js-nickname">
+    	  	</fieldset>
+          <fieldset class="form-group">
+      	   		<label for="userid">Email</label>
+      	    	     <input type="user_id" class="form-control js-email">
+      	  	</fieldset>
+            <fieldset class="form-group">
+        	   		<label for="userid">Birthyear</label>
+        	    	     <input type="user_id" class="form-control js-birthyear">
+        	  	</fieldset>
+
+	     <button class="js-submit btn btn-danger form-control">Submit</button> <br>
+	</form>
+  {{else}}
+     <h1>You better log in or register!!!</h1>
+  {{/if}}
+</template>

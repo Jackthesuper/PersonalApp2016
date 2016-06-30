@@ -1,0 +1,18 @@
+<template name = "profiles">
+  {{#if currentUser}}
+  <h1>List of profiles</h1>
+  <ol type="1">
+  {{#each g in getProfile}}
+     {{> profileRow  profile=g}}
+  {{/each}}
+
+</ol>
+  {{else}}
+     <h1>You better log in or register!!!</h1>
+  {{/if}}
+</template>
+
+<template name="profileRow">
+	 <li>{{profile.firstname}} {{profile.lastname}}, whose nickname is {{profile.nickname}} and whose email is {{profile.email}}, was born in {{profile.birthyear}}.
+	  </li>
+</template>
