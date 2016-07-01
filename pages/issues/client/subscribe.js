@@ -1,1 +1,1 @@
-Meteor.subscribe("theIssues");
+Meteor.subscribe("theIssues","Tim Hickey");

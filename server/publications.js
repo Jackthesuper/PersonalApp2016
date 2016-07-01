@@ -5,7 +5,7 @@ Meteor.publish("theSymptoms",
   function(){return Symptoms.find();})
 
   Meteor.publish("theIssues",
-    function(){return Issues.find();})
+    function(name){return Issues.find({offeredBy: name});})
 
     Meteor.publish("theRides",
       function(){return Rides.find();})
