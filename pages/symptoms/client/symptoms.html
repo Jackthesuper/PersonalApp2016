@@ -6,10 +6,12 @@
   <input type="text" class="js-user-symptoms" placeholder="Enter some symptoms">
   <br>
   <button class="js-pusher btn btn-info"> Submit</button>
-  <br>
+  <br><hr>
+  <h2>Learn about symptoms</h2>
 {{> symptoms_rd}}
 
   <hr>
+  <h2>Other people's symptoms</h2>
 	<ul>
 	{{#each s in symptomsdata}}
 	   {{> symptomsRow  symptom=s}}
@@ -21,7 +23,7 @@
 
 <template name="symptomsRow">
 	 <li>{{symptom.createdAt}}: {{ symptom.text}} : {{symptom.userEmail}}
-       <span class="js-delete-symptoms glyphicon glyphicon-remove" aria-hidden="true">
+       <span class="js-delete-symptoms glyphicon glyphicon-trash" aria-hidden="true">
        </span>
 	  </li>
 </template>
@@ -34,21 +36,19 @@
   </select>
 <br>
 {{#if allcold}}
-<p>cold symptoms</p>
   <div class="coldall">
     <ul>
-      <li>dd</li>
-      <li>ss</li>
+      <li><a  href="https://en.wikipedia.org/wiki/Common_cold">Know about cold</a></li>
+      <li><a  href="http://www.webmd.com/cold-and-flu/cold-guide/understanding-common-cold-basics">Cold basics</a></li>
     </ul>
   </div>
 {{/if}}
 
 {{#if allheadache}}
-<p>headache symptoms</p>
   <div class="hdaall">
     <ul>
-      <li>aa</li>
-      <li>bb</li>
+      <li><li><a  href="https://en.wikipedia.org/wiki/Headache">Know about headache</a></li></li>
+      <li><a href="http://www.medicinenet.com/headache/article.htm">headache and cure</a></li>
     </ul>
   </div>
 {{/if}}

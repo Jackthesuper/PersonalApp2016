@@ -1,0 +1,21 @@
+<template name="sponsors">
+
+	<h1>Generous Sponsors List</h1>
+	{{#each sponsorData}}
+		<hr/>
+		{{name}}: {{amt}}
+	{{/each}}
+
+	<hr>
+	<h1>Your Donation</h1>
+	<p>Like all charities we need your help to be a success. We rely on kind donations to help us provide much needed <br>
+		medical support for those in rural Zambia. With your help we can save lives.
+		<br><br>Just <strong>£3</strong> a month could provide internet to a rural health centre for a week.
+		<br><br>Just <strong>£5</strong> a month could enable us to spend half a day training local clinic staff in Africa.
+		<br><br>Just <strong>£15</strong> a month could cover monthly internet fees for a rural health centre to service a whole community.
+    <br><br>Just <strong>£25</strong> a month could purchase equipment needed to connect to the local broadband network.
+		<br><br>Donate to be added on our Generous Sponsors List :) </p>
+		<button class="js-donate btn btn-lg btn-info">
+			Donate Now
+		</button>
+</template>
