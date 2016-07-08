@@ -7,8 +7,8 @@ Meteor.publish("theSymptoms",
   Meteor.publish("theIssues",
     function(name){return Issues.find();})
 
-    Meteor.publish("theRides",
-      function(){return Rides.find();})
+    // Meteor.publish("theRides",
+    //   function(){return Rides.find();})
 
 Meteor.publish("userData",function(){
   if(this.userId){

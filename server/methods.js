@@ -1,6 +1,6 @@
- Meteor.methods({
-   sayhiserver: function(){
-     console.log("hi!");
-
-   }
- })
+ // Meteor.methods({
+ //   sayhiserver: function(){
+ //     console.log("hi!");
+ //
+ //   }
+ // })
