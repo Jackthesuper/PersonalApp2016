@@ -14,7 +14,7 @@ Template.comments.events({
 	   	window.alert("you must enter a comment!");
 	   	return;
 	   }
-	   const comment_rating = $(".js-rating-comment").val();
+	   const comment_rating = parseInt($(".js-rating-comment").val());
 	   const comment_obj =
 	   {text: comment_text,
 	   	rating:comment_rating,

@@ -13,16 +13,34 @@ Template.issues.events({
 		const birthday = $(".js-birthday").val();
 		const phone = $(".js-phone").val();
 		const address = $(".js-address").val();
+		var arr = []
 		const cold = $(".js-cold").val();
 		const hda = $(".js-hda").val();
 		const hta = $(".js-hta").val();
 		const sta = $(".js-sta").val();
 		const diz = $(".js-diz").val();
+		if($('.js-cold').is(":checked")){
+			arr.push("cold");
+		}
+		if($('.js-hda').is(":checked")){
+			arr.push("headache");
+		}
+		if($('.js-hta').is(":checked")){
+			arr.push("heartache");
+		}
+		if($('.js-sta').is(":checked")){
+			arr.push("stomachache");
+		}
+		if($('.js-diz').is(":checked")){
+			arr.push("dizzy");
+		}
+
 		const issue =
-		{offeredBy:name, bornOn:birthday, liveIn:address,days:[1,3,4]};
+		{offeredBy:name, birthday, phone, address, arr};
 		console.dir(issue);
 		//Issues.insert(issue);
 		Meteor.call("insertIssue",issue);
+
 
 	},
 

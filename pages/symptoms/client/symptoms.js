@@ -1,3 +1,33 @@
+Template.symptoms_rd.onCreated(function() {
+	this.templateDictionary=new ReactiveDict();
+	this.templateDictionary.set('allcold',false);
+	this.templateDictionary=new ReactiveDict();
+	this.templateDictionary.set('allheadache',false);
+});
+
+Template.symptoms_rd.helpers({
+	allcold: function(){
+		return Template.instance().templateDictionary.get('allcold');
+	},
+	allheadache: function(){
+		return Template.instance().templateDictionary.get('allheadache');
+	},
+
+});
+
+Template.symptoms_rd.events({
+	"change select": function(event,template){
+		if($(event.target).val()==='cold'){
+			template.templateDictionary.set('allcold',true);
+			template.templateDictionary.set('allheadache',false);
+		}
+		else if($(event.target).val()==='hda'){
+			template.templateDictionary.set('allcold',false);
+			template.templateDictionary.set('allheadache',true);
+		}
+	},
+});
+
 Template.symptoms.helpers({
 	symptomsdata: function(){
 		return Symptoms.find({},{sort:{createdAt:-1}, limit:30000});},

@@ -7,6 +7,8 @@
   <br>
   <button class="js-pusher btn btn-info"> Submit</button>
   <br>
+{{> symptoms_rd}}
+
   <hr>
 	<ul>
 	{{#each s in symptomsdata}}
@@ -22,4 +24,37 @@
        <span class="js-delete-symptoms glyphicon glyphicon-remove" aria-hidden="true">
        </span>
 	  </li>
+</template>
+
+<template name="symptoms_rd">
+  <select class="nameList">
+    <option>start to select</option>
+    <option value="cold">cold</option>
+    <option value="hda">headache</option>
+  </select>
+<br>
+{{#if allcold}}
+<p>cold symptoms</p>
+  <div class="coldall">
+    <ul>
+      <li>dd</li>
+      <li>ss</li>
+    </ul>
+  </div>
+{{/if}}
+
+{{#if allheadache}}
+<p>headache symptoms</p>
+  <div class="hdaall">
+    <ul>
+      <li>aa</li>
+      <li>bb</li>
+    </ul>
+  </div>
+{{/if}}
+
+
+
+
+
 </template>
