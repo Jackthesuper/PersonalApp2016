@@ -7,6 +7,9 @@ Meteor.publish("theSymptoms",
   Meteor.publish("theIssues",
     function(name){return Issues.find();})
 
+    Meteor.publish("theBios",
+      function(){return Bios.find();})
+
     Meteor.publish("theRides",
       function(){return Rides.find();})
 
