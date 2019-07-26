@@ -1,0 +1,135 @@
+<template name="login">
+  <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+/* form {border: 3px solid #f1f1f1;} */
+form {border: 0px solid #f1f1f1;}
+
+.input-group{
+  width: 40%;
+  margin: auto;
+  /* padding: 12px;
+  margin: 0px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-sizing: border-box; */
+}
+input[type=text], input[type=password] {
+  /* width: 40%; */
+  /* padding: 14px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc; */
+  border-radius: 20px;
+  border-left: none;
+  background-color: white;
+}
+
+h5 {
+  text-align: center;
+  opacity: 0.3;
+}
+
+.button1 {
+  background-color: #20B2AA;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 40%;
+}
+.button2 {
+  background-color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  color: black;
+  border: 2px solid #20B2AA;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 40%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  /* padding: 16px; */
+  padding: 3px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+
+span.input-group-addon{
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: white !important;
+  border-right: none;
+}
+</style>
+
+
+  <!-- <div class="imgcontainer">
+    <img src="images/vd.jpg" alt="Avatar" class="avatar">
+  </div> -->
+
+
+  <div class="jumbotron text-center">
+    <h1>Project<span style="color:#20B2AA;">WELL</span></h1><br>
+    <form class="form-horizontal">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input type="text" class="form-control" placeholder="User name" name="uname" required>
+      </div><br>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+        <input type="password" class="form-control" placeholder="Password" name="psw" required>
+      </div>
+        <!-- <div class="form-group">
+          <div class='col-sm-offset-3'>
+            <button type="submit" class="btn btn-success col-sm-6">Login</button>
+          </div>
+        </div> -->
+      <button class="button button1" type="submit">Login</button><br>
+      <h5 style="cursor: pointer;">Forget password?</h5>
+      <br><br><br><br>
+      <button class="button button2" type="submit"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>    Please call me</button>
+    </form>
+  </div>
+
+
+
+</template>
