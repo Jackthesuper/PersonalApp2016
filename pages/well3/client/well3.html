@@ -101,10 +101,14 @@
   }
 
   .progress-title{
-  float: left;
-  line-height: 3px;
-  width: 30%
-}
+    float: left;
+    line-height: 3px;
+    width: 30%
+  }
+
+  .progress-bar-info{
+    background-color: #20B2AA;
+  }
 
   /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 700px) {
@@ -120,6 +124,113 @@
       width: 100%;
     }
   }
+
+  .cb {
+  display: block;
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  -font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.cb input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 17px;
+  width: 15px;
+  background-color: #eee;
+}
+
+/* When the checkbox is checked, add a blue background */
+.cb input:checked ~ .checkmark {
+  background-color: #20B2AA;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.cb input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.cb .checkmark:after {
+  left: 5px;
+  top: 4px;
+  width: 5px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.cb2 {
+display: block;
+position: relative;
+padding-left: 15px;
+margin-bottom: 15px;
+cursor: pointer;
+-font-size: 14px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.cb2 input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+height: 0;
+width: 0;
+}
+
+/* When the checkbox is checked, add a blue background */
+.cb2 input:checked ~ .checkmark {
+background-color: #ffa500;
+}
+
+/* Show the checkmark when checked */
+.cb2 input:checked ~ .checkmark:after {
+display: block;
+}
+
+/* Style the checkmark/indicator */
+.cb2 .checkmark:after {
+left: 5px;
+top: 4px;
+width: 5px;
+height: 8px;
+border: solid white;
+border-width: 0 3px 3px 0;
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+}
   </style>
   </head>
   <body>
@@ -136,7 +247,7 @@
     <a href="#" class="right">Welcome Nicole</a>
   </div>
 
-  <div class="row">
+  <div class="row" style="margin-left:0px;">
     <div class="side">
       <h2>Project<span style="color:#20B2AA;">WELL</span></h2><br>
       <h4>Recommended diet:</h4><br>
@@ -221,58 +332,138 @@
             <td>Total calories</td>
             <td>7000cal</td>
             <td>7010cal</td>
-            <td>@mdo</td>
+            <td>
+              <label class="cb">
+              <input type="checkbox" checked="checked" onclick="return false;">
+              <span class="checkmark"></span>
+              </label>
+            </td>
           </tr>
           <tr>
             <td>Protein</td>
             <td>390g</td>
             <td>350g</td>
-            <td>@fat</td>
+            <td>
+              <label class="cb2">
+              <input type="checkbox" checked="checked" onclick="return false;">
+              <span class="checkmark"></span>
+              </label>
+            </td>
           </tr>
           <tr>
             <td>Fats</td>
             <td>308g</td>
             <td>300g</td>
-            <td>@twitter</td>
+            <td>
+              <label class="cb">
+              <input type="checkbox" checked="checked" onclick="return false;">
+              <span class="checkmark"></span>
+              </label>
+            </td>
           </tr>
           <tr>
             <td>Sugars</td>
             <td>102g</td>
             <td>100g</td>
-            <td>@twitter</td>
+            <td>
+              <label class="cb">
+              <input type="checkbox" checked="checked" onclick="return false;">
+              <span class="checkmark"></span>
+              </label>
+            </td>
           </tr>
           <tr>
             <td>Fiber</td>
             <td>175g</td>
             <td>150g</td>
-            <td>@twitter</td>
+            <td>
+              <label class="cb2">
+              <input type="checkbox" checked="checked" onclick="return false;">
+              <span class="checkmark"></span>
+              </label>
+            </td>
           </tr>
           <tr>
             <td>Cholesterol</td>
             <td>1.4g</td>
             <td>1.3g</td>
-            <td>@twitter</td>
+            <td>
+              <label class="cb">
+              <input type="checkbox" checked="checked" onclick="return false;">
+              <span class="checkmark"></span>
+              </label>
+            </td>
           </tr>
           <tr>
             <td>Sodium</td>
             <td>10.5g</td>
             <td>10g</td>
-            <td>@twitter</td>
+            <td>
+              <label class="cb">
+              <input type="checkbox" checked="checked" onclick="return false;">
+              <span class="checkmark"></span>
+              </label>
+            </td>
           </tr>
           <tr>
             <td>Micronutrients</td>
             <td>-</td>
             <td>-</td>
-            <td>@twitter</td>
+            <td>
+              <label class="cb">
+              <input type="checkbox" checked="checked" onclick="return false;">
+              <span class="checkmark"></span>
+              </label>
+            </td>
           </tr>
         </tbody>
       </table>
-      <h4 style="background-color: #20B2AA;padding: 10px;color: white;">Good eater meter</h4><br><br>
-
+      <h4 style="background-color: #20B2AA;padding: 10px;color: white;">Good eater meter</h4>
+      <br><br><br><br><br><br>
+      <div class="row">
+        <div class="col-lg-4" style="height:30px;">
+          <div class="progress" style="height: 20px;width:100%;margin-bottom:10px;">
+            <div class="progress-bar progress-bar-danger" role="progressbar"
+             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+             style="width: 100%;">
+            </div>
+          </div>
+          <p style="opacity:0.5;">80%</p>
+        </div>
+        <div class="col-lg-4" style="height:30px;">
+          <div class="progress" style="height: 20px;width:100%">
+            <div class="progress-bar progress-bar-warning" role="progressbar"
+             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+             style="width: 100%;">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4" style="height:30px;">
+          <div class="progress" style="height: 20px;width:100%;margin-bottom:10px;">
+            <div class="progress-bar progress-bar-info" role="progressbar"
+             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+             style="width: 100%;">
+            </div>
+          </div>
+          <p style="opacity:0.5;float:right;">100%</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4" style="text-align:center;">
+          <h4>Good</h4>
+        </div>
+        <div class="col-lg-4" style="text-align:center;">
+          <h4>Very good</h4>
+        </div>
+        <div class="col-lg-4" style="text-align:center;">
+          <h4 style="font-weight: bold;">Perfect!</h4>
+        </div>
+      </div>
+      <br><br><br>
       <footer class="container-fluid" style="text-align:center;">
-        <h3 style="display:inline"><span style="background-color: #f0f0f0; color: #20B2AA; padding: 10px;">Congratulations!</span></h3>
+        <h2 style="display:inline"><span style="background-color: #f0f0f0; color: #20B2AA; padding: 10px;">Congratulations!</span></h2>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <h4 style="display:inline">Your meal will be delivered on 07/30/2019</h4>
+        <h3 style="display:inline">Your meal will be delivered on 07/30/2019</h3>
       </footer>
     </div>
   </div>

@@ -171,7 +171,7 @@ button:hover {
     <a href="#" class="right">Welcome Nicole</a>
   </div>
 
-  <div class="row">
+  <div class="row" style="margin-left:0px;">
     <div class="side">
       <h2>Project<span style="color:#20B2AA;">WELL</span></h2><br>
       <h4>Recommended diet:</h4><br>
@@ -255,9 +255,12 @@ button:hover {
             		<option>5</option>
             	</select>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-5">
               <label class="control-label">Add other</label>
-              <textarea class="form-control" rows="1" id="comment"></textarea>
+              <div class="random" style="display: flex">
+                <textarea style="width:80%" class="form-control" rows="1" id="comment"></textarea>
+                <button style="background: transparent; border:none;" class="glyphicon glyphicon-plus-sign" aria-hidden="true"></button>
+              </div>
             </div>
           </div>
         </div><br>
@@ -278,9 +281,12 @@ button:hover {
             		<option>10</option>
             	</select>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-5">
               <label class="control-label">Add other</label>
-              <textarea class="form-control col-lg-4" rows="1" id="comment"></textarea>
+              <div class="random" style="display: flex">
+                <textarea style="width:80%" class="form-control" rows="1" id="comment"></textarea>
+                <button style="background: transparent; border:none;" class="glyphicon glyphicon-plus-sign" aria-hidden="true"></button>
+              </div>
             </div>
           </div>
         </div>
@@ -291,8 +297,8 @@ button:hover {
       </form>
       <!-- <br><br><br><br><br><br><br><br><br> -->
       <footer class="container-fluid">
-        <button class="button button1" type="submit">Save</button>&nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="button button2" type="submit">Cancel</button>
+        <button class="js-submit button button1" type="submit">Save</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="js-cancel button button2" type="submit">Cancel</button>
       </footer>
 
     </div>
