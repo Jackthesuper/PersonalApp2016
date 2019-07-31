@@ -7,7 +7,11 @@ Template.well.events({
 
     'click .js-edit-preference': function(event){
         event.preventDefault();
-        console.log(this.userId);
         Router.go('/well4');
+    },
+
+    'click .js-edit-demographic': function(event){
+        event.preventDefault();
+        Router.go('/well5');
     }
 });

@@ -1,4 +1,4 @@
-<template name="well4">
+<template name="well5">
   <head>
   <title>Page Title</title>
   <meta charset="UTF-8">
@@ -100,9 +100,10 @@
     opacity: 0.3;
   }
 
-  .form-control{
+  .form-control {
     border-radius: 50px;
   }
+
   .progress-title{
   float: left;
   line-height: 3px;
@@ -248,28 +249,49 @@ button:hover {
       <form action="/action_page.php">
         <div class="form-group">
           <div class="row">
-            <div class="col-sm-4">
-              <label class="control-label">What food do you avoid?</label>
-              <select class="form-control js-rating-comment">
-            		<option>Eggplant, Ginger</option>
-            		<option>2</option>
-            		<option>3</option>
-            		<option>4</option>
-            		<option>5</option>
-            	</select>
+            <div class="col-lg-4">
+              <label class="control-label">Address</label>
+              <textarea class="form-control" rows="1" id="comment"></textarea>
             </div>
-            <div class="col-sm-5">
-              <label class="control-label">Add other</label>
-              <div class="random" style="display: flex">
-                <textarea style="width:80%;" class="form-control" rows="1" id="comment"></textarea>
-                <button style="background: transparent; border:none;" class="glyphicon glyphicon-plus-sign" aria-hidden="true"></button>
-              </div>
+            <div class="col-lg-8">
+                <div class="row">
+                <div class="col-lg-4">
+                <label class="control-label">State</label>
+                <select class="form-control js-rating-comment">
+              		<option>NV</option>
+              		<option>2</option>
+              		<option>3</option>
+              		<option>4</option>
+              		<option>5</option>
+            	   </select>
+                 </div>
+                 <div class="col-lg-4">
+                 <label class="control-label">Zip Code</label>
+                 <select class="form-control js-rating-comment">
+               		<option>89107</option>
+               		<option>2</option>
+               		<option>3</option>
+               		<option>4</option>
+               		<option>5</option>
+             	   </select>
+                  </div>
+                  <div class="col-lg-4">
+                  <label class="control-label">Household size</label>
+                  <select class="form-control js-rating-comment">
+                		<option>Living alone</option>
+                		<option>2</option>
+                		<option>3</option>
+                		<option>4</option>
+                		<option>5</option>
+              	   </select>
+                   </div>
+                 </div>
             </div>
           </div>
         </div><br>
         <div class="form-group">
           <div class="row">
-            <div class="col-sm-4">
+            <div class="col-lg-4">
               <label class="control-label">Sensitivities</label>
               <select class="form-control js-rating-comment">
             		<option>Soy, Fish</option>
@@ -284,12 +306,9 @@ button:hover {
             		<option>10</option>
             	</select>
             </div>
-            <div class="col-sm-5">
+            <div class="col-lg-8">
               <label class="control-label">Add other</label>
-              <div class="random" style="display: flex">
-                <textarea style="width:80%" class="form-control" rows="1" id="comment"></textarea>
-                <button style="background: transparent; border:none;" class="glyphicon glyphicon-plus-sign" aria-hidden="true"></button>
-              </div>
+              <textarea class="form-control" rows="1" id="comment"></textarea>
             </div>
           </div>
         </div>
