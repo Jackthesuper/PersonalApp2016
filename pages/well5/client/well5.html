@@ -100,15 +100,27 @@
     opacity: 0.3;
   }
 
+  .op2{
+    opacity: 0.5;
+  }
+
   .form-control {
     border-radius: 50px;
+  }
+
+  .control-label{
+    opacity: 0.5;
   }
 
   .progress-title{
   float: left;
   line-height: 3px;
-  width: 30%
+  width: 40%
 }
+
+  .progress-bar-info{
+    background-color: #20b2aa;
+  }
 
 .button1 {
   background-color: #20B2AA;
@@ -140,7 +152,16 @@
   cursor: pointer;
   width: 20%;
 }
-
+.button4 {
+  background-color: #20B2AA;
+  color: white;
+  padding: 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100%;
+}
 button:hover {
   opacity: 0.8;
 }
@@ -169,34 +190,38 @@ button:hover {
   </div>
 
   <div class="navbar">
-    <a href="#" class="right"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a>
+    <a href="#" class="right logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a>
     <a href="#" class="right"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Survey</a>
     <a href="#" class="right"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Order by phone</a>
-    <a href="#" class="right">Welcome Nicole</a>
+    <a href="#" class="right">{{#if currentUser}}
+       Welcome {{currentUser.username}}
+    {{else}}
+       You better log in!!!
+    {{/if}}</a>
   </div>
 
   <div class="row" style="margin-left:0px;">
     <div class="side">
       <h2>Project<span style="color:#20B2AA;">WELL</span></h2><br>
       <h4>Recommended diet:</h4><br>
-      <span class="progress-title">Sodium</span>
-      <div class="progress" style="height: 5px;width:70%">
+      <span class="progress-title"><span style="line-height:0px;color:#f44336;" class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> Sodium</span>
+      <div class="progress" style="height: 5px;width:60%">
         <div class="progress-bar progress-bar-danger" role="progressbar"
          aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
          style="width: 20%;">
         </div>
       </div>
 
-      <span class="progress-title">Glycemic</span>
-      <div class="progress" style="height: 5px;width:70%">
+      <span class="progress-title"><span style="line-height:0px;color:#ff9800;" class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> Glycemic</span>
+      <div class="progress" style="height: 5px;width:60%">
         <div class="progress-bar progress-bar-warning" role="progressbar"
          aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
          style="width: 40%;">
         </div>
       </div>
 
-      <span class="progress-title">Protein</span>
-      <div class="progress" style="height: 5px;width:70%">
+      <span class="progress-title"><span style="line-height:0px;color:#20b2aa;" class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> Protein</span>
+      <div class="progress" style="height: 5px;width:60%">
         <div class="progress-bar progress-bar-info" role="progressbar"
          aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
          style="width: 60%;">
@@ -228,36 +253,24 @@ button:hover {
         <span class="label label-info">Plant-based <span class="glyphicon glyphicon-remove" style="cursor:pointer;" aria-hidden="true"></span></span>
       </h4><br>
 
-      <h4>Your weekly selection:</h4>
-      <div class="row">
-        <div class="column2">
-          <div class="fakeimg" style="height:60px;">Image</div>
-        </div>
-        <div class="column2">
-          <div class="fakeimg" style="height:60px;">Image</div>
-        </div>
-        <div class="column2">
-          <div class="fakeimg" style="height:60px;">Image</div>
-        </div>
-        <div class="column2">
-          <div class="fakeimg" style="height:60px;">Image</div>
-        </div>
-      </div>
+      <h4>Your weekly selection: <span class="op2" style="float:right;">7/10</span></h4>
+      <button class="button button4 js-go-home" style="display:inline"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Go back to meal selection</button>
+
     </div>
     <div class="main">
-      <h4 style="background-color: #20B2AA;padding: 10px;color: white;">Edit Preferences</h4><br>
+      <h4 style="background-color: #20B2AA;padding: 10px;color: white;">Edit Demographic Data</h4><br>
       <form action="/action_page.php">
         <div class="form-group">
           <div class="row">
             <div class="col-lg-4">
-              <label class="control-label">Address</label>
-              <textarea class="form-control" rows="1" id="comment"></textarea>
+              <label class="control-label op">Address</label>
+              <textarea class="form-control" rows="1" id="comment" value="325 Lorem Ipsum"></textarea>
             </div>
             <div class="col-lg-8">
                 <div class="row">
                 <div class="col-lg-4">
                 <label class="control-label">State</label>
-                <select class="form-control js-rating-comment">
+                <select class="form-control">
               		<option>NV</option>
               		<option>2</option>
               		<option>3</option>
@@ -267,7 +280,7 @@ button:hover {
                  </div>
                  <div class="col-lg-4">
                  <label class="control-label">Zip Code</label>
-                 <select class="form-control js-rating-comment">
+                 <select class="form-control">
                		<option>89107</option>
                		<option>2</option>
                		<option>3</option>
@@ -277,7 +290,7 @@ button:hover {
                   </div>
                   <div class="col-lg-4">
                   <label class="control-label">Household size</label>
-                  <select class="form-control js-rating-comment">
+                  <select class="form-control">
                 		<option>Living alone</option>
                 		<option>2</option>
                 		<option>3</option>
@@ -291,24 +304,31 @@ button:hover {
         </div><br>
         <div class="form-group">
           <div class="row">
-            <div class="col-lg-4">
-              <label class="control-label">Sensitivities</label>
-              <select class="form-control js-rating-comment">
-            		<option>Soy, Fish</option>
-            		<option>2</option>
-            		<option>3</option>
-            		<option>4</option>
-            		<option>5</option>
-                <option>6</option>
-            		<option>7</option>
-            		<option>8</option>
-            		<option>9</option>
-            		<option>10</option>
+            <div class="col-lg-2">
+              <label class="control-label">Weight</label>
+              <select class="form-control js-select-weight">
+                <option></option>
+            		<option>60</option>
+            		<option>65</option>
+            		<option>70</option>
+            		<option>75</option>
+            		<option>80</option>
+                <option>85</option>
+            		<option>90</option>
+            		<option>95</option>
+            		<option>100</option>
             	</select>
             </div>
-            <div class="col-lg-8">
-              <label class="control-label">Add other</label>
-              <textarea class="form-control" rows="1" id="comment"></textarea>
+            <div class="col-lg-2" style="width:14%;">
+              <label class="control-label">Height</label>
+              <textarea class="form-control js-height" rows="1" id="comment" value="1.8" style="border:none; background-color:#f0f0f0;" disabled></textarea>
+            </div>
+            <div class="col-lg-1" style="width:5%;">
+              <span style="margin-top: 30px; color: #20B2AA;" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            </div>
+            <div class="col-lg-2" style="width:14%;">
+              <label class="control-label">BMI index</label>
+              <textarea class="form-control js-bmi" rows="1" id="comment" style="border:none; background-color:#f0f0f0;" disabled></textarea>
             </div>
           </div>
         </div>

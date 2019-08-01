@@ -13,5 +13,10 @@ Template.well.events({
     'click .js-edit-demographic': function(event){
         event.preventDefault();
         Router.go('/well5');
-    }
+    },
+
+    'click .js-go-basket': function(event){
+        event.preventDefault();
+        Router.go('/well2');
+    },
 });

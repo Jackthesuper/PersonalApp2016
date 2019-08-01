@@ -20,13 +20,15 @@ Template.comments.events({
 	   	rating:comment_rating,
 	    createdAt: new Date(),
 	    createdBy: Meteor.userId(),
-	    userEmail: Meteor.user().emails[0].address};
+			username: Meteor.user().username};
+	    // userEmail: Meteor.user().emails[0].address};
 	    //console.dir(comment_obj);
 	    //Comments.insert(comment_obj);
 			Meteor.call("insertComments",comment_obj);
-	    $(".js-user-comment").val("");
+	    $(".js-user-comment").val("bb");
 	    //Router.go('/commentSubmit');
 	    console.log("Did we get here????")
+			console.log(Meteor.user().username);
 	},
 });
 

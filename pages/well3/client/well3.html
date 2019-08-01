@@ -100,14 +100,33 @@
     opacity: 0.3;
   }
 
+  .op2{
+    opacity: 0.5;
+  }
+
   .progress-title{
     float: left;
     line-height: 3px;
-    width: 30%
+    width: 40%
   }
 
   .progress-bar-info{
+    background-color: #20b2aa;
+  }
+
+  .button4 {
     background-color: #20B2AA;
+    color: white;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+  }
+  .disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 
   /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
@@ -211,7 +230,7 @@ width: 0;
 
 /* When the checkbox is checked, add a blue background */
 .cb2 input:checked ~ .checkmark {
-background-color: #ffa500;
+background-color: #ff9800;
 }
 
 /* Show the checkmark when checked */
@@ -241,34 +260,38 @@ transform: rotate(45deg);
   </div>
 
   <div class="navbar">
-    <a href="#" class="right"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a>
+    <a href="#" class="right logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a>
     <a href="#" class="right"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Survey</a>
     <a href="#" class="right"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Order by phone</a>
-    <a href="#" class="right">Welcome Nicole</a>
+    <a href="#" class="right">{{#if currentUser}}
+       Welcome {{currentUser.username}}
+    {{else}}
+       You better log in!!!
+    {{/if}}</a>
   </div>
 
   <div class="row" style="margin-left:0px;">
     <div class="side">
       <h2>Project<span style="color:#20B2AA;">WELL</span></h2><br>
       <h4>Recommended diet:</h4><br>
-      <span class="progress-title">Sodium</span>
-      <div class="progress" style="height: 5px;width:70%">
+      <span class="progress-title"><span style="line-height:0px;color:#f44336;" class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> Sodium</span>
+      <div class="progress" style="height: 5px;width:60%">
         <div class="progress-bar progress-bar-danger" role="progressbar"
          aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
          style="width: 20%;">
         </div>
       </div>
 
-      <span class="progress-title">Glycemic</span>
-      <div class="progress" style="height: 5px;width:70%">
+      <span class="progress-title"><span style="line-height:0px;color:#ff9800;" class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> Glycemic</span>
+      <div class="progress" style="height: 5px;width:60%">
         <div class="progress-bar progress-bar-warning" role="progressbar"
          aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
          style="width: 40%;">
         </div>
       </div>
 
-      <span class="progress-title">Protein</span>
-      <div class="progress" style="height: 5px;width:70%">
+      <span class="progress-title"><span style="line-height:0px;color:#20b2aa;" class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> Protein</span>
+      <div class="progress" style="height: 5px;width:60%">
         <div class="progress-bar progress-bar-info" role="progressbar"
          aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
          style="width: 60%;">
@@ -300,21 +323,11 @@ transform: rotate(45deg);
         <span class="label label-info">Plant-based <span class="glyphicon glyphicon-remove" style="cursor:pointer;" aria-hidden="true"></span></span>
       </h4><br>
 
-      <h4>Your weekly selection:</h4>
-      <div class="row">
-        <div class="column2">
-          <div class="fakeimg" style="height:60px;">Image</div>
-        </div>
-        <div class="column2">
-          <div class="fakeimg" style="height:60px;">Image</div>
-        </div>
-        <div class="column2">
-          <div class="fakeimg" style="height:60px;">Image</div>
-        </div>
-        <div class="column2">
-          <div class="fakeimg" style="height:60px;">Image</div>
-        </div>
-      </div>
+      <h4>Your weekly selection: <span class="op2" style="float:right;">7/10</span></h4>
+      <button class="button button4 js-go-basket disabled" style="display:inline">
+        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Review your basket
+      </button>
+
     </div>
     <div class="main">
       <h4 style="background-color: #20B2AA; padding: 10px; color: white;">Nutrition Information for your weekly order:</h4>
@@ -419,7 +432,7 @@ transform: rotate(45deg);
         </tbody>
       </table>
       <h4 style="background-color: #20B2AA;padding: 10px;color: white;">Good eater meter</h4>
-      <br><br><br><br><br><br>
+      <br><br><br><br>
       <div class="row">
         <div class="col-lg-4" style="height:30px;">
           <div class="progress" style="height: 20px;width:100%;margin-bottom:10px;">
