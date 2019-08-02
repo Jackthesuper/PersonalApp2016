@@ -28,3 +28,12 @@ Meteor.publish("theSettings",function(){
     this.ready();
   }
   ;})
+
+  Meteor.publish("theDemographic",function(){
+    if(this.userId){
+      return Demographic.find({user:this.userId});
+    }
+    else{
+      this.ready();
+    }
+    ;})

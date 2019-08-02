@@ -264,23 +264,69 @@ button:hover {
           <div class="row">
             <div class="col-lg-4">
               <label class="control-label op">Address</label>
-              <textarea class="form-control" rows="1" id="comment" value="325 Lorem Ipsum"></textarea>
+              <textarea class="form-control js-address" rows="1" value={{demographic.address}} style="resize:none;"></textarea>
             </div>
             <div class="col-lg-8">
                 <div class="row">
                 <div class="col-lg-4">
                 <label class="control-label">State</label>
-                <select class="form-control">
+                <select class="form-control js-select-state">
+                  <option value={{demographic.state}} selected hidden>{{demographic.state}}</option>
+              		<option>AL</option>
+              		<option>AK</option>
+              		<option>AZ</option>
+              		<option>AR</option>
+                  <option>CA</option>
+              		<option>CO</option>
+              		<option>CT</option>
+              		<option>DE</option>
+                  <option>FL</option>
+              		<option>GA</option>
+              		<option>HI</option>
+              		<option>ID</option>
+                  <option>IL</option>
+              		<option>IN</option>
+              		<option>IA</option>
+                  <option>KS</option>
+              		<option>LA</option>
+              		<option>ME</option>
+              		<option>MD</option>
+                  <option>MA</option>
+                  <option>MI</option>
+              		<option>MN</option>
+              		<option>MS</option>
+                  <option>MO</option>
+              		<option>MT</option>
+              		<option>NE</option>
               		<option>NV</option>
-              		<option>2</option>
-              		<option>3</option>
-              		<option>4</option>
-              		<option>5</option>
+                  <option>NH</option>
+                  <option>NJ</option>
+              		<option>NM</option>
+              		<option>NY</option>
+                  <option>NC</option>
+              		<option>ND</option>
+              		<option>OH</option>
+              		<option>OK</option>
+                  <option>OR</option>
+              		<option>PA</option>
+                  <option>RI</option>
+              		<option>SC</option>
+              		<option>SD</option>
+              		<option>TN</option>
+                  <option>TX</option>
+                  <option>UT</option>
+              		<option>VT</option>
+              		<option>VA</option>
+                  <option>WA</option>
+              		<option>WV</option>
+              		<option>WI</option>
+              		<option>WY</option>
             	   </select>
                  </div>
                  <div class="col-lg-4">
                  <label class="control-label">Zip Code</label>
-                 <select class="form-control">
+                 <select class="form-control js-select-zipcode">
+                  <option value={{demographic.zipcode}} selected hidden>{{demographic.zipcode}}</option>
                		<option>89107</option>
                		<option>2</option>
                		<option>3</option>
@@ -290,8 +336,9 @@ button:hover {
                   </div>
                   <div class="col-lg-4">
                   <label class="control-label">Household size</label>
-                  <select class="form-control">
-                		<option>Living alone</option>
+                  <select class="form-control js-select-household">
+                    <option value={{demographic.household}} selected hidden>{{demographic.household}}</option>
+                    <option>Living alone</option>
                 		<option>2</option>
                 		<option>3</option>
                 		<option>4</option>
@@ -321,14 +368,14 @@ button:hover {
             </div>
             <div class="col-lg-2" style="width:14%;">
               <label class="control-label">Height</label>
-              <textarea class="form-control js-height" rows="1" id="comment" value="1.8" style="border:none; background-color:#f0f0f0;" disabled></textarea>
+              <textarea class="form-control js-height" rows="1" id="comment" value="1.8" style="border:none; background-color:#f0f0f0;resize:none;" disabled></textarea>
             </div>
             <div class="col-lg-1" style="width:5%;">
               <span style="margin-top: 30px; color: #20B2AA;" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             </div>
             <div class="col-lg-2" style="width:14%;">
               <label class="control-label">BMI index</label>
-              <textarea class="form-control js-bmi" rows="1" id="comment" style="border:none; background-color:#f0f0f0;" disabled></textarea>
+              <textarea class="form-control js-bmi" rows="1" id="comment" style="border:none; background-color:#f0f0f0;resize:none;" disabled></textarea>
             </div>
           </div>
         </div>
